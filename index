@@ -1,0 +1,217 @@
+
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BUTLERS MISSION 通信｜読者プレゼント</title>
+<style>
+:root {
+  color-scheme: light dark;
+  --neon: #b7ff00;
+  --black: #090b0a;
+}
+* { box-sizing: border-box; }
+html, body {
+  margin: 0;
+  min-height: 100%;
+  background: var(--black);
+}
+body {
+  color: light-dark(#10140c, #f3f7ed);
+  font-family: Arial, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  background-color: light-dark(#f5f8ef, #090b0a);
+}
+#app {
+  min-height: 100vh;
+  padding: 24px 16px 36px;
+  background-color: light-dark(#f5f8ef, #090b0a);
+  color: light-dark(#10140c, #f3f7ed);
+}
+.site {
+  max-width: 720px;
+  margin: 0 auto;
+  border: 1px solid light-dark(#c7d7b5, #35412e);
+  background: light-dark(#ffffff, #101410);
+  box-shadow: 0 0 0 4px light-dark(#e6f1d7, #0e130d), 0 0 28px #b7ff0020;
+}
+.masthead {
+  background: #090b0a;
+  color: #f6f9ef;
+  padding: 24px 22px 20px;
+  border-bottom: 4px solid var(--neon);
+}
+.kicker {
+  font-size: 11px;
+  letter-spacing: .22em;
+  color: var(--neon);
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+.brand {
+  font-size: clamp(21px, 5vw, 34px);
+  line-height: 1.2;
+  font-weight: 900;
+  letter-spacing: .025em;
+}
+.brand span { color: var(--neon); }
+.issue {
+  margin-top: 10px;
+  font-size: 11px;
+  letter-spacing: .18em;
+  color: #b4bdb0;
+}
+.content { padding: 28px clamp(18px, 5vw, 42px) 34px; }
+.label {
+  display: inline-block;
+  background: var(--neon);
+  color: #090b0a;
+  font-weight: 900;
+  letter-spacing: .12em;
+  font-size: 11px;
+  padding: 7px 11px;
+  margin-bottom: 15px;
+}
+h1 {
+  font-size: clamp(28px, 7vw, 42px);
+  margin: 0;
+  line-height: 1.25;
+  font-weight: 900;
+}
+h1 .gift { color: #80b900; }
+.rule {
+  width: 74px;
+  height: 5px;
+  background: var(--neon);
+  margin: 20px 0 24px;
+}
+p {
+  font-size: 15px;
+  line-height: 1.95;
+  margin: 0 0 12px;
+}
+.note { font-weight: 700; }
+.art {
+  margin: 27px 0 20px;
+  border: 1px dashed light-dark(#81956d, #60714e);
+  background: light-dark(#f4f8eb, #171e13);
+  padding: 28px 16px;
+  text-align: center;
+}
+.art img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto 14px;
+}
+.art-title {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .14em;
+}
+.download {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 330px;
+  min-height: 54px;
+  margin: 3px auto 0;
+  padding: 15px 18px;
+  background: var(--neon);
+  color: #090b0a;
+  text-decoration: none;
+  font-weight: 900;
+  letter-spacing: .04em;
+  border: 2px solid var(--neon);
+  box-shadow: 4px 4px 0 #090b0a;
+}
+.download:hover {
+  background: #d0ff65;
+  transform: translate(-1px, -1px);
+  box-shadow: 5px 5px 0 #090b0a;
+}
+.download:focus-visible {
+  outline: 3px solid #658d00;
+  outline-offset: 4px;
+}
+.button-wrap {
+  text-align: center;
+  margin: 22px 0 28px;
+}
+.usage {
+  border-top: 1px solid light-dark(#d4ddca, #35412e);
+  padding-top: 18px;
+  margin-top: 24px;
+}
+.usage h2 {
+  font-size: 12px;
+  letter-spacing: .1em;
+  margin: 0 0 9px;
+  color: light-dark(#36442b, #c5ff62);
+}
+.usage p {
+  font-size: 12px;
+  line-height: 1.8;
+  color: light-dark(#4d5944, #bdc6b5);
+}
+.footer {
+  padding: 14px 20px;
+  background: #090b0a;
+  border-top: 1px solid #35412e;
+  color: #9ca795;
+  font-size: 10px;
+  text-align: center;
+  letter-spacing: .08em;
+}
+@media (min-width: 600px) {
+  #app { padding: 38px 24px 48px; }
+  .masthead { padding: 28px 34px 24px; }
+}
+</style>
+</head>
+<body>
+<main id="app">
+  <article class="site">
+    <header class="masthead">
+      <div class="kicker">SPECIAL PRESENT / FAN GAME MAGAZINE</div>
+      <div class="brand">BUTLERS MISSION <span>通信</span></div>
+      <div class="issue">創刊号　｜　READER'S PRESENT</div>
+    </header>
+
+    <section class="content">
+      <div class="label">SPECIAL GIFT</div>
+      <h1><span class="gift">🎁</span> 読者プレゼント</h1>
+      <div class="rule"></div>
+
+      <p>ページへのアクセスありがとうございます♪</p>
+
+      <p>最後まで、私のお遊びにお付き合い下さりありがとうございました。</p>
+
+      <p>プレゼントへの応募はできませんが、表紙イラストの画像をプレゼントさせてください🎁</p>
+
+      <p>見に来てくださって、ありがとうございました！</p>
+
+      <div class="art" aria-label="表紙イラストのプレビュー">
+        <img src="cover.png" alt="BUTLERS MISSION 通信の表紙イラスト">
+        <div class="art-title">COVER ILLUSTRATION</div>
+      </div>
+
+      <div class="button-wrap">
+        <a class="download" href="cover.png" download="BUTLERS_MISSION_cover.png">↓　表紙イラストをダウンロード</a>
+      </div>
+
+      <section class="usage">
+        <h2>【画像の利用について】</h2>
+        <p>本画像の無断転載・再配布、およびAI学習への使用を禁止します。</p>
+      </section>
+    </section>
+
+    <footer class="footer">
+      BUTLERS MISSION 通信　｜　THANK YOU FOR VISITING!
+    </footer>
+  </article>
+</main>
+</body>
+</html>
