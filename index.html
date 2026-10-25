@@ -5,70 +5,457 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>BUTLERS MISSION 通信｜読者プレゼント</title>
+
 <style>
-:root { color-scheme: light; --neon:#b7ff00; --black:#090b0a; --muted:#aab4a2; --line:#35412e; }
-* { box-sizing:border-box; }
-html,body { margin:0; min-height:100%; background:#f5f8ef; }
-body { color:#10140c; font-family:Arial,"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif; background-color:#f5f8ef; }
-#app { min-height:100vh; width:100%; border-radius:0; background-color:#f5f8ef; color:#10140c; padding:24px 16px 36px; }
-.site { max-width:720px; margin:0 auto; border:1px solid #c7d7b5; background:#ffffff; box-shadow:0 0 0 4px #e6f1d7,0 0 28px #b7ff0020; }
-.masthead { background:#090b0a; color:#f6f9ef; padding:24px 22px 20px; border-bottom:4px solid var(--neon); }
-.kicker { font-size:11px; letter-spacing:.22em; color:var(--neon); font-weight:800; margin-bottom:10px; }
-.brand { font-size:clamp(21px,5vw,34px); line-height:1.2; font-weight:900; letter-spacing:.025em; }
-.brand span { color:var(--neon); }
-.issue { margin-top:10px; font-size:11px; letter-spacing:.18em; color:#b4bdb0; }
-.content { padding:28px clamp(18px,5vw,42px) 34px; }
-.label { display:inline-block; background:var(--neon); color:#090b0a; font-weight:900; letter-spacing:.12em; font-size:11px; padding:7px 11px; margin-bottom:15px; }
-h1 { font-size:clamp(28px,7vw,42px); margin:0; line-height:1.25; font-weight:900; }
-h1 .gift { color:#80b900; }
-.rule { width:74px; height:5px; background:var(--neon); margin:20px 0 24px; }
-p { font-size:15px; line-height:1.95; margin:0 0 12px; }
-.note { font-weight:700; }
-.password-box { margin:0 0 24px; padding:20px; border:1px solid #c7d7b5; background:#f4f8eb; }
-.password-box label { display:block; font-size:14px; font-weight:800; margin-bottom:10px; }
-.password-row { display:flex; gap:10px; }
-.password-row input { min-width:0; flex:1; padding:12px; border:1px solid #81956d; background:#fff; color:#10140c; font:inherit; }
-.password-row button { padding:12px 16px; border:2px solid #090b0a; background:var(--neon); color:#090b0a; font-weight:900; cursor:pointer; }
-.password-message { margin:10px 0 0; font-size:13px; line-height:1.6; }
-.password-message.error { color:#a12626; }
-.hidden-content[hidden], .password-box[hidden] { display:none; }
-.art { margin:27px 0 20px; border:1px dashed #81956d; background:#f4f8eb; padding:28px 16px; text-align:center; }
-.art-icon { width:58px; height:58px; display:grid; place-items:center; margin:0 auto 14px; border:2px solid var(--neon); color:var(--neon); background:#090b0a; font-size:26px; }
-.art-title { font-size:12px; font-weight:800; letter-spacing:.14em; }
-.art-sub { font-size:12px; margin-top:7px; color:#5a6550; }
-.download { display:inline-flex; justify-content:center; align-items:center; gap:10px; width:100%; max-width:330px; min-height:54px; margin:3px auto 0; padding:15px 18px; background:var(--neon); color:#090b0a; text-decoration:none; font-weight:900; letter-spacing:.04em; border:2px solid var(--neon); box-shadow:4px 4px 0 #090b0a; }
-.download:hover { background:#d0ff65; transform:translate(-1px,-1px); box-shadow:5px 5px 0 #090b0a; }
-.download:focus-visible { outline:3px solid #658d00; outline-offset:4px; }
-.button-wrap { text-align:center; margin:22px 0 28px; }
-.usage { border-top:1px solid #d4ddca; padding-top:18px; margin-top:24px; }
-.usage h2 { font-size:12px; letter-spacing:.1em; margin:0 0 9px; color:#36442b; }
-.usage p { font-size:12px; line-height:1.8; color:#4d5944; }
-.footer { padding:14px 20px; background:#090b0a; border-top:1px solid #35412e; color:#9ca795; font-size:10px; text-align:center; letter-spacing:.08em; }
-@media (max-width:420px) { .password-row { flex-direction:column; } .password-row button { width:100%; } }
-@media (min-width:600px) { #app { padding:38px 24px 48px; } .masthead { padding:28px 34px 24px; } }
+:root {
+  color-scheme: light;
+  --neon: #b7ff00;
+  --black: #090b0a;
+  --muted: #aab4a2;
+  --line: #35412e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background: #f5f8ef;
+}
+
+body {
+  color: #10140c;
+  font-family: Arial, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  background-color: #f5f8ef;
+}
+
+#app {
+  min-height: 100vh;
+  width: 100%;
+  border-radius: 0;
+  background-color: #f5f8ef;
+  color: #10140c;
+  padding: 24px 16px 36px;
+}
+
+.site {
+  max-width: 720px;
+  margin: 0 auto;
+  border: 1px solid #c7d7b5;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px #e6f1d7, 0 0 28px #b7ff0020;
+}
+
+.masthead {
+  background: #090b0a;
+  color: #f6f9ef;
+  padding: 24px 22px 20px;
+  border-bottom: 4px solid var(--neon);
+}
+
+.kicker {
+  font-size: 11px;
+  letter-spacing: .22em;
+  color: var(--neon);
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.brand {
+  font-size: clamp(21px, 5vw, 34px);
+  line-height: 1.2;
+  font-weight: 900;
+  letter-spacing: .025em;
+}
+
+.brand span {
+  color: var(--neon);
+}
+
+.issue {
+  margin-top: 10px;
+  font-size: 11px;
+  letter-spacing: .18em;
+  color: #b4bdb0;
+}
+
+.content {
+  padding: 28px clamp(18px, 5vw, 42px) 34px;
+}
+
+.label {
+  display: inline-block;
+  background: var(--neon);
+  color: #090b0a;
+  font-weight: 900;
+  letter-spacing: .12em;
+  font-size: 11px;
+  padding: 7px 11px;
+  margin-bottom: 15px;
+}
+
+h1 {
+  font-size: clamp(28px, 7vw, 42px);
+  margin: 0;
+  line-height: 1.25;
+  font-weight: 900;
+}
+
+h1 .gift {
+  color: #80b900;
+}
+
+.rule {
+  width: 74px;
+  height: 5px;
+  background: var(--neon);
+  margin: 20px 0 24px;
+}
+
+p {
+  font-size: 15px;
+  line-height: 1.95;
+  margin: 0 0 12px;
+}
+
+.note {
+  font-weight: 700;
+}
+
+/* パスワード入力欄 */
+
+.password-box {
+  margin: 0 0 24px;
+  padding: 20px;
+  border: 1px solid #c7d7b5;
+  background: #f4f8eb;
+}
+
+.password-box label {
+  display: block;
+  font-size: 14px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.password-row {
+  display: flex;
+  gap: 10px;
+}
+
+.password-row input {
+  min-width: 0;
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #81956d;
+  background: #fff;
+  color: #10140c;
+  font: inherit;
+}
+
+.password-row button {
+  padding: 12px 16px;
+  border: 2px solid #090b0a;
+  background: var(--neon);
+  color: #090b0a;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.password-row button:hover {
+  background: #d0ff65;
+}
+
+.password-message {
+  margin: 10px 0 0;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.password-message.error {
+  color: #a12626;
+}
+
+/* 表示・非表示の制御 */
+
+.hidden-content[hidden],
+.password-box[hidden] {
+  display: none;
+}
+
+/* 正解後、下からふわっと表示 */
+
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-transition {
+  animation: riseIn .65s cubic-bezier(.2, .75, .25, 1) both;
+}
+
+/* 動きを減らす設定の端末ではアニメーションを無効化 */
+
+@media (prefers-reduced-motion: reduce) {
+  .page-transition {
+    animation: none;
+  }
+}
+
+/* 表紙イラストの案内 */
+
+.art {
+  margin: 27px 0 20px;
+  border: 1px dashed #81956d;
+  background: #f4f8eb;
+  padding: 28px 16px;
+  text-align: center;
+}
+
+.art-icon {
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 14px;
+  border: 2px solid var(--neon);
+  color: var(--neon);
+  background: #090b0a;
+  font-size: 26px;
+}
+
+.art-title {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .14em;
+}
+
+.art-sub {
+  font-size: 12px;
+  margin-top: 7px;
+  color: #5a6550;
+}
+
+/* ダウンロードボタン */
+
+.download {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 330px;
+  min-height: 54px;
+  margin: 3px auto 0;
+  padding: 15px 18px;
+  background: var(--neon);
+  color: #090b0a;
+  text-decoration: none;
+  font-weight: 900;
+  letter-spacing: .04em;
+  border: 2px solid var(--neon);
+  box-shadow: 4px 4px 0 #090b0a;
+}
+
+.download:hover {
+  background: #d0ff65;
+  transform: translate(-1px, -1px);
+  box-shadow: 5px 5px 0 #090b0a;
+}
+
+.download:focus-visible {
+  outline: 3px solid #658d00;
+  outline-offset: 4px;
+}
+
+.button-wrap {
+  text-align: center;
+  margin: 22px 0 28px;
+}
+
+/* 画像の利用について */
+
+.usage {
+  border-top: 1px solid #d4ddca;
+  padding-top: 18px;
+  margin-top: 24px;
+}
+
+.usage h2 {
+  font-size: 12px;
+  letter-spacing: .1em;
+  margin: 0 0 9px;
+  color: #36442b;
+}
+
+.usage p {
+  font-size: 12px;
+  line-height: 1.8;
+  color: #4d5944;
+}
+
+/* フッター */
+
+.footer {
+  padding: 14px 20px;
+  background: #090b0a;
+  border-top: 1px solid #35412e;
+  color: #9ca795;
+  font-size: 10px;
+  text-align: center;
+  letter-spacing: .08em;
+}
+
+/* スマートフォン対応 */
+
+@media (max-width: 420px) {
+  .password-row {
+    flex-direction: column;
+  }
+
+  .password-row button {
+    width: 100%;
+  }
+}
+
+@media (min-width: 600px) {
+  #app {
+    padding: 38px 24px 48px;
+  }
+
+  .masthead {
+    padding: 28px 34px 24px;
+  }
+}
 </style>
 </head>
+
 <body>
-<main id="app"><article class="site">
-<header class="masthead"><div class="kicker">SPECIAL PRESENT / FAN GAME MAGAZINE</div><div class="brand">BUTLERS MISSION <span>通信</span></div><div class="issue">創刊号　｜　READER'S PRESENT</div></header>
-<section class="content">
-<div class="label">SPECIAL GIFT</div><h1><span class="gift">🎁</span> 読者プレゼント</h1><div class="rule"></div>
-<section class="password-box" id="passwordBox">
-<label for="passwordInput">応募に必要なパスワードを入力ください。</label>
-<form id="passwordForm" class="password-row">
-<input id="passwordInput" name="password" type="password" autocomplete="off" aria-describedby="passwordMessage" placeholder="パスワードを入力" required>
-<button type="submit">入力する</button>
-</form>
-<p id="passwordMessage" class="password-message" role="status" aria-live="polite"></p>
-</section>
-<section id="hiddenContent" class="hidden-content" hidden>
-<p>ページへのアクセスありがとうございます♪</p><p class="note">最後まで、私のお遊びにお付き合い下さりありがとうございます。</p><p>プレゼントへの応募はできませんが、その代わりに、表紙イラストの画像をプレゼントさせてください🎁</p><p>こちらのページまで、見に来てくださり、本当にありがとうございました！</p>
-<div class="art" aria-label="表紙イラストのプレビュー"><div class="art-icon">✦</div><div class="art-title">COVER ILLUSTRATION</div><div class="art-sub">表紙イラストをここに表示します</div></div>
-<div class="button-wrap"><a class="download" href="cover.png" download="BUTLERS_MISSION_cover.png">↓　表紙イラストをダウンロード</a></div>
-<section class="usage"><h2>【画像の利用について】</h2><p>本画像の無断転載・再配布、およびAI学習への使用を禁止します。</p></section>
-</section>
-</section><footer class="footer">BUTLERS MISSION 通信　｜　THANK YOU FOR VISITING!</footer>
-</article></main>
+<main id="app">
+  <article class="site">
+
+    <header class="masthead">
+      <div class="kicker">SPECIAL PRESENT / FAN GAME MAGAZINE</div>
+      <div class="brand">BUTLERS MISSION <span>通信</span></div>
+      <div class="issue">創刊号　｜　READER'S PRESENT</div>
+    </header>
+
+    <section class="content">
+
+      <div class="label">SPECIAL GIFT</div>
+
+      <h1><span class="gift">🎁</span> 読者プレゼント</h1>
+
+      <div class="rule"></div>
+
+      <!-- パスワード入力画面 -->
+
+      <section class="password-box" id="passwordBox">
+
+        <label for="passwordInput">
+          応募に必要なパスワードを入力ください。
+        </label>
+
+        <form id="passwordForm" class="password-row">
+
+          <input
+            id="passwordInput"
+            name="password"
+            type="text"
+            autocomplete="off"
+            aria-describedby="passwordMessage"
+            placeholder="パスワードを入力"
+            required
+          >
+
+          <button type="submit">進む</button>
+
+        </form>
+
+        <p
+          id="passwordMessage"
+          class="password-message"
+          role="status"
+          aria-live="polite"
+        ></p>
+
+      </section>
+
+      <!-- 正解したときに表示する内容 -->
+
+      <section id="hiddenContent" class="hidden-content" hidden>
+
+        <p>ページへのアクセスありがとうございます♪</p>
+
+        <p class="note">
+          最後まで、私のお遊びにお付き合い下さりありがとうございます。
+        </p>
+
+        <p>
+          プレゼントへの応募はできませんが、その代わりに、
+          表紙イラストの画像をプレゼントさせてください🎁
+        </p>
+
+        <p>
+          こちらのページまで、見に来てくださり、
+          本当にありがとうございました！
+        </p>
+
+        <div class="art" aria-label="表紙イラストのプレビュー">
+
+          <div class="art-icon">✦</div>
+
+          <div class="art-title">COVER ILLUSTRATION</div>
+
+          <div class="art-sub">
+            表紙イラストをここに表示します
+          </div>
+
+        </div>
+
+        <div class="button-wrap">
+
+          <a
+            class="download"
+            href="cover.png"
+            download="BUTLERS_MISSION_cover.png"
+          >
+            ↓　表紙イラストをダウンロード
+          </a>
+
+        </div>
+
+        <section class="usage">
+
+          <h2>【画像の利用について】</h2>
+
+          <p>
+            本画像の無断転載・再配布、およびAI学習への使用を禁止します。
+          </p>
+
+        </section>
+
+      </section>
+
+    </section>
+
+    <footer class="footer">
+      BUTLERS MISSION 通信　｜　THANK YOU FOR VISITING!
+    </footer>
+
+  </article>
+</main>
+
 <script>
 const passwordForm = document.getElementById('passwordForm');
 const passwordInput = document.getElementById('passwordInput');
@@ -79,21 +466,36 @@ const passwordBox = document.getElementById('passwordBox');
 passwordForm.addEventListener('submit', function (event) {
   event.preventDefault();
 
-  // 全角英数字を半角に変換し、大文字・小文字を統一して比較
+  // 全角英数字を半角に変換し、大文字・小文字を統一する
   const normalizedPassword = passwordInput.value
     .normalize('NFKC')
     .trim()
     .toUpperCase();
 
+  // 正しいパスワード
   if (normalizedPassword === 'B12M26TSU') {
+
+    // 入力欄を隠して、次の内容を表示
     hiddenContent.hidden = false;
     passwordBox.hidden = true;
+
+    // アニメーションを最初から再生する
+    hiddenContent.classList.remove('page-transition');
+    void hiddenContent.offsetWidth;
+    hiddenContent.classList.add('page-transition');
+
   } else {
-    passwordMessage.textContent = 'パスワードが違うようです。もう一度確認してください。';
+
+    // パスワードが違う場合
+    passwordMessage.textContent =
+      'パスワードが違うようです。もう一度確認してください。';
+
     passwordMessage.classList.add('error');
     passwordInput.focus();
+
   }
 });
 </script>
+
 </body>
 </html>
