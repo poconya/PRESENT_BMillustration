@@ -105,6 +105,20 @@
   .page:has(#passwordBox:not([hidden])) .footer-band { height: 18px; }
   .page:has(#passwordBox:not([hidden])) footer { font-size: 12px; }
 }
+
+/* PC: 入力前・入力後でヘッダー幅を統一し、プレゼント本文を450pxに */
+@media (min-width: 651px) {
+  .page,
+  .page:has(#passwordBox:not([hidden])) {
+    max-width: 850px;
+    width: calc(100% - 96px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .gift-copy {
+    width: min(100%, 450px);
+  }
+}
 </style>
 </head>
 <body>
