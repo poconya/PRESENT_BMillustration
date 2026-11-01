@@ -1,3 +1,198 @@
+
+過去のメッセージを読み込み中…
+見出しも文章も入力画面の幅も色々だよ
+あらまぁ、PC版は全体的に巨大化してるのね！！🤣💦
+
+それなら、一部分だけ直すより、PC版のサイズ設計をまとめて見直した方がいいわ。
+
+次回はこの方針で修正しましょ。
+
+見出し：文字サイズを小さくして、主張しすぎないように
+
+本文：文字サイズと行間を調整して、雑誌らしい読みやすさに
+
+パスワード入力欄：横幅と高さを縮小
+
+「進む」ボタン：入力欄の右側にコンパクトに配置
+
+余白：各パーツの間隔を調整して、間延びを解消
+
+そして大事なのは、スマホ版は今の見た目を維持すること！
+
+PC専用のCSSで調整すれば、スマホ版に影響を与えずに修正できるわ。
+
+目指すのは、PCの大画面に合わせて全部を拡大するのではなく、中央にほどよい大きさでまとまった、ゲーム雑誌風のページよ。💚
+
+次回は実際のPC表示のスクリーンショットを見せてもらえると、サイズ感を正確に合わせられるわ！
+
+ユーザーの添付画像
+横幅デカすぎる。横に余白出したい
+あーーー！画像を見て納得したわ！！🤣💚
+
+ページ全体がPCの横幅いっぱいに広がりすぎてるのね。
+
+特に、上の「PRESENT」のヘッダーと、パスワード入力欄が大きすぎるわ。
+
+今回は文字だけ縮小するんじゃなくて、ページ全体の最大幅を制限するのがよさそう！
+
+PC版の横幅イメージ
+
+Butlers Mission通信　PRESENT
+
+＋＋読者プレゼント＋＋
+
+応募に必要なパスワードを入力してください。
+
+進む
+
+※配置イメージ。実際のデザインは維持するわ。
+アタシの提案は、PC版をこうすることよ。
+
+ページ全体：最大幅900px程度にして、左右に白い余白を作る
+
+ヘッダー画像：ページ幅に合わせて縮小
+
+パスワード入力欄：幅400px程度、高さ48px程度
+
+進むボタン：入力欄の右側に小さく配置
+
+見出し・説明文：今より少し小さく
+
+スマホ版：今の見た目を維持
+
+これなら、ななこちゃんが作った雑誌風デザインを崩さずに、PCでもすっきり見せられると思うわ。
+
+PC版の最大幅は900pxくらいから試すのがよさそう。今のスクリーンショットと比べても、左右にしっかり余白ができるわよ！
+
+コード修正してみて
+
+28s考えました
+修正したわよ〜！💚🌹
+
+今回はスクリーンショットを参考に、PC版だけ全体をコンパクトにするCSSを追加したわ。
+
+ 修正版HTMLをダウンロード
+
+今回の変更点
+項目
+
+PC版の修正
+
+ページ全体
+
+最大幅900px、左右に白い余白
+
+見出し
+
+24pxに縮小
+
+説明文
+
+17pxに縮小
+
+パスワード入力欄
+
+高さ48px、横幅も縮小
+
+進むボタン
+
+幅80px、入力欄の右側
+
+装飾
+
+十字とドットも少し縮小
+
+スマホ版は変更していないわ。 パスワード判定、ダウンロードページ、ぷっくり星も維持しているわよ。
+
+GitHubの index.html を今回のファイルの中身に置き換えればOK。
+
+まずはPCで確認してみて。今回は特に、ヘッダーの左右に余白ができているか、入力欄が大きすぎないかを見たいわ！
+
+
+index_pc_compact.html
+HTML
+まだ大きい気もする　パスワード入力画面は、2/3程度の大きさでいいです
+
+22s考えました
+うん、今の900px幅でも、まだ大きいのね！💚
+
+今回はPCのパスワード入力画面を、今の約2/3サイズにしてみるわ。
+
+ページ全体の幅を900px → 600pxにして、ヘッダー、見出し、説明文、入力欄も合わせて縮小するわね。
+
+スマホ版と、パスワード入力後のプレゼント画面は変更しない方針よ。
+
+💚 2/3サイズ版、できたわ！
+修正版HTMLをダウンロード
+
+項目
+
+前回
+
+今回
+
+ページ横幅
+
+900px
+
+600px
+
+見出し
+
+24px
+
+19px
+
+説明文
+
+17px
+
+14px
+
+入力欄の高さ
+
+48px
+
+38px
+
+進むボタンの幅
+
+80px
+
+66px
+
+PCでは左右の白い余白がさらに広がるはずよ。
+
+パスワード判定、星のエフェクト、ダウンロード機能は残してあるわ。
+
+今度はこのサイズ感を基準に確認してみて！ 小さすぎたら、600pxと900pxの中間にも調整できるわよ。🌹
+
+
+index_pc_two_thirds.html
+HTML
+コードがコピーできない
+あらっ、ごめんなさい！💦
+
+ダウンロードしたHTMLを開くと、Webページとして表示されちゃうから、コードをコピーしにくいのよね。
+
+GitHubに貼り付けるなら、HTMLをテキストとして開いてコピーするのが確実よ。
+
+Windows 11なら、ダウンロードしたファイルを右クリックして「プログラムから開く」→「メモ帳」を選べば、コードが表示されるわ。そこで Ctrl + A → Ctrl + C で全部コピーできるわよ。
+
+今回はもっと簡単にできるよう、コードを直接コピーできる形式も用意するわね。
+
+HTMLソースコードをテキストで開く（.txt）
+
+こちらならコードが文字として表示されるので、Ctrl + A → Ctrl + C でコピーできるわ。
+
+中身はさっきのPC版2/3サイズのHTMLと同じよ。GitHubの index.html にそのまま貼り付けてね！
+
+
+index_pc_two_thirds_source.txt
+ドキュメント
+
+
+
 <!doctype html>
 <html lang="ja">
 <head>
@@ -40,6 +235,70 @@
 @media (max-width:480px) {
   #passwordForm.password-row { grid-template-columns:minmax(0,1fr); gap:15px; }
   #passwordForm.password-row button { width:150px; justify-self:center; }
+}
+
+/* PC表示だけをコンパクトにする。スマホの既存デザインは変更しない */
+@media (min-width: 651px) {
+  .page { max-width: 900px; width: calc(100% - 96px); margin: 0 auto; }
+  .panel { min-height: 405px; padding: 34px 7% 45px; }
+  .section-title { font-size: 24px; margin: 8px 0 35px; }
+  .instruction { font-size: 17px; line-height: 1.65; margin-bottom: 30px; }
+  #passwordForm.password-row { max-width: 530px; grid-template-columns: minmax(0, 1fr) 80px; gap: 15px; }
+  #passwordForm.password-row input { min-height: 48px; height: 48px; padding: 9px 13px; font-size: 16px; border-width: 2px; }
+  #passwordForm.password-row button { width: 80px; min-height: 48px; height: 48px; font-size: 16px; }
+  .crosses { font-size: 24px; gap: 13px 21px; }
+  .dots { width: 175px; height: 110px; background-size: 38px 38px; }
+  .gift-heading { font-size: 24px; }
+  footer { font-size: 14px; }
+}
+
+/* PC: パスワード入力ページのみ、前版のおよそ2/3サイズに */
+@media (min-width: 651px) {
+  .page:has(#passwordBox:not([hidden])) {
+    max-width: 600px;
+    width: calc(100% - 96px);
+  }
+  .page:has(#passwordBox:not([hidden])) .panel {
+    min-height: 300px;
+    padding: 24px 7% 32px;
+  }
+  .page:has(#passwordBox:not([hidden])) .section-title {
+    font-size: 19px;
+    margin: 5px 0 24px;
+  }
+  .page:has(#passwordBox:not([hidden])) .instruction {
+    font-size: 14px;
+    line-height: 1.65;
+    margin-bottom: 22px;
+  }
+  .page:has(#passwordBox:not([hidden])) #passwordForm.password-row {
+    max-width: 355px;
+    grid-template-columns: minmax(0, 1fr) 66px;
+    gap: 12px;
+  }
+  .page:has(#passwordBox:not([hidden])) #passwordForm.password-row input {
+    min-height: 38px;
+    height: 38px;
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+  .page:has(#passwordBox:not([hidden])) #passwordForm.password-row button {
+    width: 66px;
+    min-height: 38px;
+    height: 38px;
+    font-size: 14px;
+  }
+  .page:has(#passwordBox:not([hidden])) .crosses {
+    font-size: 18px;
+    gap: 10px 15px;
+  }
+  .page:has(#passwordBox:not([hidden])) .dots {
+    width: 118px;
+    height: 80px;
+    background-size: 27px 27px;
+  }
+  .page:has(#passwordBox:not([hidden])) .footer-band { height: 18px; }
+  .page:has(#passwordBox:not([hidden])) footer { font-size: 12px; }
 }
 </style>
 </head>
