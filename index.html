@@ -57,15 +57,15 @@
   footer { font-size: 14px; }
 }
 
-/* PC: パスワード入力ページのみ、前版のおよそ2/3サイズに */
+/* PC: ヘッダーと帯は850px、入力欄はコンパクトなまま */
 @media (min-width: 651px) {
   .page:has(#passwordBox:not([hidden])) {
-    max-width: 600px;
+    max-width: 850px;
     width: calc(100% - 96px);
   }
   .page:has(#passwordBox:not([hidden])) .panel {
-    min-height: 300px;
-    padding: 24px 7% 32px;
+    min-height: 340px;
+    padding: 30px 7% 38px;
   }
   .page:has(#passwordBox:not([hidden])) .section-title {
     font-size: 19px;
